@@ -1,25 +1,32 @@
 ﻿using iTS_ApartBillingCheckList.Areas.InterfaceCollection;
+using iTS_ApartBillingCheckList.Areas.Signup.Data;
 
 namespace iTS_ApartBillingCheckList.Areas.Signup.Models.Repository
 {
-    public class SignUpRepository : ISignUpRepository
+    public class RegistrationRepository : IRegistrationRepository
     {
-        public bool Create(SignUp entity)
+        private readonly ApplicationDbContext _db;
+
+        public RegistrationRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+        public bool Create(Registration entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(SignUp entity)
+        public bool Delete(Registration entity)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<SignUp> FindAll()
+        public ICollection<Registration> FindAll()
         {
             throw new NotImplementedException();
         }
 
-        public SignUp FindById(int id)
+        public Registration FindById(int id)
         {
             throw new NotImplementedException();
         }
@@ -29,7 +36,7 @@ namespace iTS_ApartBillingCheckList.Areas.Signup.Models.Repository
             throw new NotImplementedException();
         }
 
-        public bool Update(SignUp entity)
+        public bool Update(Registration entity)
         {
             throw new NotImplementedException();
         }

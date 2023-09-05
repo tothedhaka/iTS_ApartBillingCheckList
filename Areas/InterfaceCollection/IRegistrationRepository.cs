@@ -2,7 +2,7 @@
 
 namespace iTS_ApartBillingCheckList.Areas.InterfaceCollection
 {
-    public interface ISignUpRepository : IRepositoryBase<SignUp>
+    public interface IRegistrationRepository : IRepositoryBase<Registration>
     {
     }
 }
