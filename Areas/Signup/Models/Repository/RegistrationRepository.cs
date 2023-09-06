@@ -13,6 +13,7 @@ namespace iTS_ApartBillingCheckList.Areas.Signup.Models.Repository
         }
         public bool Create(Registration entity)
         {
+            
             throw new NotImplementedException();
         }
 

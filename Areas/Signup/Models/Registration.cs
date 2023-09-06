@@ -6,12 +6,13 @@ namespace iTS_ApartBillingCheckList.Areas.Signup.Models
     {
 
             [Key]
-            public int Uid { get; set; }
-            [Required]
+            public int uid { get; set; }
+            [Required]            
             public string RegistrantName { get; set; }
             [Required]
             public string Mobile { get; set; }
             [Required]
+            [StringLength(30, MinimumLength = 3)]
             public string UserId { get; set; }
             [Required]
             public string Password { get; set; }

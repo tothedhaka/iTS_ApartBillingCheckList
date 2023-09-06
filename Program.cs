@@ -1,7 +1,21 @@
+using iTS_ApartBillingCheckList.Areas.Signup.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//IServiceCollection serviceCollection = builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServer(
+//    builder.Configuration.GetConnectionString("DefaultConnection")
+//));
+
+var connectionString = builder.Configuration.GetConnectionString("MySqlConn");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+
 
 var app = builder.Build();
 
