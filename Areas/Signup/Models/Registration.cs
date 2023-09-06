@@ -16,8 +16,11 @@ namespace iTS_ApartBillingCheckList.Areas.Signup.Models
             public string UserId { get; set; }
             [Required]
             public string Password { get; set; }
-            public string? Email { get; set; }
-
+            public string? Email { get; set; }            
+            [Required]
+            public int CountryID { get; set;}
+            [Required]
+            public int CurrencyID { get; set;}
             [Required]
             [DataType(DataType.Date)]
             [DisplayFormat(DataFormatString = "{0: yyyy-MM-dd}", ApplyFormatInEditMode = true)]
