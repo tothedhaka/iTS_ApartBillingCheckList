@@ -1,5 +1,6 @@
 ﻿using iTS_ApartBillingCheckList.Areas.InterfaceCollection;
 using iTS_ApartBillingCheckList.Areas.Signup.Data;
+using System.Threading.Tasks;
 
 namespace iTS_ApartBillingCheckList.Areas.Signup.Models.Repository
 {
@@ -11,35 +12,36 @@ namespace iTS_ApartBillingCheckList.Areas.Signup.Models.Repository
         {
             _db = db;
         }
-        public bool Create(Registration entity)
+
+        public async Task Add(Registration entity)
         {
-            
-            throw new NotImplementedException();
+            await _db.Registrations.AddAsync(entity);            
+            Save();
         }
 
-        public bool Delete(Registration entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<Registration> FindAll()
+        public Task Delete(Registration entity)
         {
             throw new NotImplementedException();
         }
 
-        public Registration FindById(int id)
+        public Task<IEnumerable<Registration>> FindAll()
         {
             throw new NotImplementedException();
         }
 
-        public bool Save()
+        public Task<Registration> FindById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Registration entity)
+        public Task Update(Registration entity)
         {
             throw new NotImplementedException();
+        }
+
+        private void Save()
+        {
+            _db.SaveChanges();
         }
     }
 }

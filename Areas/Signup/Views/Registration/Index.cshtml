@@ -1,0 +1,55 @@
+﻿@page
+@model IEnumerable<iTS_ApartBillingCheckList.Areas.Signup.Models.Registration>
+
+@{
+    ViewData["Title"] = "Registrant Name";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr/>
+<form>
+<button asp-action="Create" asp-controller="Registration" class="btn btn-primary mb-3">Signup</button>
+
+<table class="table table-responsive table-bordered table-hover">
+    <thead>
+        <tr class="table-active">
+            <th>
+                @Html.DisplayNameFor(entity => entity.uid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(entity => entity.RegistrantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(entity => entity.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(entity => entity.Email)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model !=null && Model.Any())
+        {
+            @foreach (var registration in Model)
+            {
+                <tr>
+                    <td>@registration.uid</td>
+                    <td>@registration.RegistrantName</td>
+                    <td>@registration.Mobile</td>
+                    <td>@registration.Email</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">
+                    <div>
+                        No Regisrant Name Found.
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</form>
