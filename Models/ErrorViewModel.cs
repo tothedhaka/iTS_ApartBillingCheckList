@@ -1,4 +1,4 @@
-namespace iTS_ApartBillingCheckList.Models
+﻿namespace iTS_ApartBillingCheckList.Models
 {
     public class ErrorViewModel
     {
